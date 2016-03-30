@@ -29,22 +29,22 @@ more options can also be defined:
 
 ```javascript
   
-  var bablyfill = require('bablyfill');
+var bablyfill = require('bablyfill');
 
-  // just run (and use .babelrc from root)
-  bablyfill();
+// just run (and use .babelrc from root)
+bablyfill();
 
-  // or with options:
-  bablyfill({
-    ignore : /node_modules\/(?!es6-module)/
-  });
+// or with options:
+bablyfill({
+  ignore : /node_modules\/(?!es6-module)/
+});
 
-  // or with path to .babelrc:
-  bablyfill(null, path.resolve('../.babelrc'));
+// or with path to .babelrc:
+bablyfill(null, path.resolve('../.babelrc'));
   
   
-  // require your es6 code:
-  require('./es6-app');
+// require your es6 code:
+require('./es6-app');
 
 ```
 
