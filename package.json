@@ -1,6 +1,6 @@
 {
   "name": "bablyfill",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "polyfill to run esnext code in node",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
   "dependencies": {
     "babel-core": "^6.7.4",
     "babel-polyfill": "^6.7.4",
+    "babel-register": "^6.7.2",
     "object-assign": "^4.0.1"
   }
 }
