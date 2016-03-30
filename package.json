@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "example" : "node example/"
+    "example" : "echo \"running this code with bablyfill\n\" && tail ./example/es6-app.js && node ./example",
+    "pure" : "echo \"running this code with node\n\" && tail ./example/es6-app.js && node ./example/es6-app"
   },
   "repository": {
     "type": "git",
