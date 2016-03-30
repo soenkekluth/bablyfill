@@ -7,7 +7,7 @@ npm install [--save[-dev]] bablyfill
 ```
 
 ## usage: (easiest)
-- create a file containing:
+- create a file [yourscript.js] containing:
 ```javascript
 var bablyfill = require('bablyfill');
 bablyfill();
