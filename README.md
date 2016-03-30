@@ -7,7 +7,7 @@ npm install [--save[-dev]] bablyfill
 ```
 
 ## usage: (easiest)
-create a file containing:
+- create a file containing:
 ```javascript
 var bablyfill = require('bablyfill');
 bablyfill();
@@ -16,11 +16,12 @@ bablyfill();
 require('./es6-app');
   
 ```
-## run
+- run
 ```
 node ./yourscript
 ```
 
+## options
 
 bablyfill looks for a .babelrc file in the root of your project and uses it for initialization.
 execute only once at the top of your projects main.js
