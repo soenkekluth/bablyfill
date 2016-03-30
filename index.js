@@ -17,8 +17,10 @@ module.exports = function bablyfill(conf, babelrcPath) {
     console.error('==>     ERROR: Error parsing your .babelrc. from ' + babelrcPath);
     console.error(err);
     babelrc = null;
+  } finally {
+    if(babelrc || conf) {
+      var config = assign({}, babelrc, conf);
+      require('babel-core/register')(config);
+    }
   }
-
-  var config = assign({}, babelrc, conf);
-  require('babel-core/register')(config);
 };
