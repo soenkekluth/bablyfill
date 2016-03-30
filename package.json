@@ -1,0 +1,29 @@
+{
+  "name": "bablyfill",
+  "version": "1.0.0",
+  "description": "polyfill to run esnext code in node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soenkekluth/bablyfill.git"
+  },
+  "keywords": [
+    "babel",
+    "bablify",
+    "esnext"
+  ],
+  "author": "Sönke Kluth <soenke.kluth@gmail.com> (http://soenkekluth.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soenkekluth/bablyfill/issues"
+  },
+  "homepage": "https://github.com/soenkekluth/bablyfill#readme",
+  "dependencies": {
+    "babel-core": "^6.7.4",
+    "babel-polyfill": "^6.7.4",
+    "object-assign": "^4.0.1"
+  }
+}
