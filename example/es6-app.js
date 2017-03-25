@@ -1,6 +1,12 @@
 class App {
 
-  constructor(){
+  static test = {
+    foo: 'ufoo'
+  };
+
+  constructor(...args){
+
+    const {hans, wurst, ...rest} = args;
     console.log('\n\n console.logs: Hello World');
   }
 }

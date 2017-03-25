@@ -1,12 +1,12 @@
 {
   "name": "bablyfill",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "polyfill to run esnext code in node",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "example" : "echo \"running this code with bablyfill\n\" && tail ./example/es6-app.js && node ./example",
-    "pure" : "echo \"running this code with node\n\" && tail ./example/es6-app.js && node ./example/es6-app"
+    "example": "echo \"running this code with bablyfill\n\" && tail ./example/es6-app.js && node ./example",
+    "pure": "echo \"running this code with node\n\" && tail ./example/es6-app.js && node ./example/es6-app"
   },
   "repository": {
     "type": "git",
@@ -25,12 +25,16 @@
   },
   "homepage": "https://github.com/soenkekluth/bablyfill#readme",
   "dependencies": {
-    "babel-core": "^6.7.4",
-    "babel-polyfill": "^6.7.4",
-    "babel-register": "^6.7.2",
-    "object-assign": "^4.0.1"
+    "babel-cli": "6.24.0",
+    "babel-core": "6.24.0",
+    "babel-plugin-transform-class-properties": "6.23.0",
+    "babel-polyfill": "6.23.0",
+    "babel-preset-es2015-tree-shaking": "1.0.1",
+    "babel-register": "6.24.0",
+    "object-assign": "4.1.1"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.6.0"
+    "babel-preset-es2015": ">= 6.6.0",
+    "babel-preset-latest": "6.24.0"
   }
 }

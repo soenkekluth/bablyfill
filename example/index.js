@@ -1,7 +1,7 @@
 var bablyfill = require('../index');
 
 // you don't need parameters, when you require the module from your node modules folder.
-bablyfill(null, './.babelrc');
+bablyfill();
 // you can just write:
 // bablyfill();
 
