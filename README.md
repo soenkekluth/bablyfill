@@ -1,12 +1,30 @@
 # bablyfill
-"polyfill" to run esnext code in node
+run your es6+ node code without any installs but bablyfill 
 
 ## install
-```
+
+```shell
 npm install [--save[-dev]] bablyfill
 ```
+```shell
+yarn add bablyfill
+```
 
-## options
+## CLI
+```shell
+bablyfill path/to/es6.js
+```
+
+## Module
+```javascript
+  
+require('bablyfill')();
+require('./es6-app');
+
+```
+
+
+## Options
 
 bablyfill looks for a .babelrc file in the root of your project and uses it for initialization.
 execute only once at the top of your projects main.js
@@ -33,8 +51,8 @@ require('./es6-app');
 
 ```
 
-## usage: (easiest)
-- create a file [yourscript.js] containing:
+## Usage example: (easiest)
+- create a file [sript.js] containing:
 ```javascript
 var bablyfill = require('bablyfill');
 bablyfill();
@@ -45,7 +63,7 @@ require('./es6-app');
 ```
 - run
 ```
-node ./yourscript
+node ./sript
 ```
 
 

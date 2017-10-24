@@ -2,7 +2,6 @@ require('babel-polyfill');
 
 var fs = require('fs');
 var path = require('path');
-var assign = require('object-assign');
 var babelrcFile = '.babelrc';
 
 module.exports = function bablyfill(conf, babelrcPath) {
@@ -30,7 +29,7 @@ module.exports = function bablyfill(conf, babelrcPath) {
     babelrc = null;
   } finally {
     if (babelrc || conf) {
-      var config = assign({}, babelrc, conf);
+      var config = Object.assign({}, babelrc, conf);
       require('babel-core/register')(config);
     }
   }

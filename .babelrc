@@ -1,9 +1,9 @@
 {
   "presets": [
-    "latest",
-    "es2015-tree-shaking"
+    "env"
   ],
   "plugins":[
-  "transform-class-properties"
+    "transform-class-properties",
+    "transform-object-rest-spread"
   ]
 }
