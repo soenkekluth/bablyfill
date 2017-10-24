@@ -1,53 +1,57 @@
 {
-  "name": "bablyfill",
-  "version": "1.2.2",
-  "description": "polyfill to run esnext code in node",
-  "main": "index.js",
-  "bin": {
-    "bablyfill": "./cli.js"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "example": "echo \"running this code with bablyfill\n\" && tail ./example/es6-app.js && node ./example",
-    "run:pure": "echo \"running this code with node\n\" && tail ./example/es6-app.js && node ./example/es6-app",
-    "run:cli": "./cli.js ./example/es6-app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/soenkekluth/bablyfill.git"
-  },
-  "keywords": [
-    "node",
-    "babel",
-    "bablify",
-    "es6",
-    "esnext"
-  ],
-  "author": "Sönke Kluth <soenke.kluth@gmail.com> (http://soenkekluth.com/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/soenkekluth/bablyfill/issues"
-  },
-  "homepage": "https://github.com/soenkekluth/bablyfill#readme",
-  "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
-    "object-assign": "4.1.1"
-  },
-  "devDependencies": {},
-  "babel": {
-    "presets": [
-      "env"
+    "name": "bablyfill",
+    "version": "1.2.5",
+    "description": "polyfill to run esnext code in node",
+    "main": "index.js",
+    "bin": {
+        "bablyfill": "./bin/cli.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "example": "echo \"running this code with bablyfill\n\" && tail ./example/es6-app.js && node ./example",
+        "run:pure": "echo \"running this code with node\n\" && tail ./example/es6-app.js && node ./example/es6-app",
+        "run:cli": "./bin/cli.js ./example/es6-app.js",
+        "bablyfill": "bablyfill"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/soenkekluth/bablyfill.git"
+    },
+    "keywords": [
+        "node",
+        "babel",
+        "bablify",
+        "es6",
+        "esnext"
     ],
-    "plugins":[
-      "transform-class-properties",
-      "transform-object-rest-spread"
-    ]
-  }
-
+    "author": "Sönke Kluth <soenke.kluth@gmail.com> (http://soenkekluth.com/)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/soenkekluth/bablyfill/issues"
+    },
+    "homepage": "https://github.com/soenkekluth/bablyfill#readme",
+    "dependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.0",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "babel-register": "^6.26.0",
+        "object-assign": "4.1.1"
+    },
+    "files": [
+        "bin",
+        "index.js",
+        ".babelrc"
+    ],
+    "babel": {
+        "presets": [
+            "env"
+        ],
+        "plugins": [
+            "transform-class-properties",
+            "transform-object-rest-spread"
+        ]
+    }
 }

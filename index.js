@@ -8,7 +8,6 @@ module.exports = function bablyfill(conf, babelrcPath) {
 
   if (!babelrcPath) {
     var processDir = fs.realpathSync(process.cwd());
-
     if (fs.existsSync(path.resolve(processDir, babelrcFile))) {
       babelrcPath = path.resolve(processDir, babelrcFile);
     } else if (fs.existsSync(path.resolve(__dirname, '../../.babelrc'))) {
