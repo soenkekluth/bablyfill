@@ -7,8 +7,8 @@ if (!args.length || args.length > 1) {
   throw new Error("no module");
   process.exit();
 }
-const esModule = path.resolve(process.cwd(), args[0]);
 
+const esModule = path.resolve(args[0]);
 // if(esModule.indexOf('.js') > -1){
 bablyfill();
 try {
@@ -18,4 +18,10 @@ try {
     console.error(e);
   }
 }
-// }
+
+// pkgDir(__dirname).then(rootDir => {
+//   console.log("rootDir", rootDir);
+//   //=> '/Users/sindresorhus/foo'
+
+//   // }
+// });

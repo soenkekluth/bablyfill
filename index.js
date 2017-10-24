@@ -1,8 +1,8 @@
 require('babel-polyfill');
-
-var fs = require('fs');
-var path = require('path');
-var babelrcFile = '.babelrc';
+const pkgDir = require('pkg-dir');
+const fs = require('fs');
+const path = require('path');
+const babelrcFile = '.babelrc';
 
 module.exports = function bablyfill(conf, babelrcPath) {
 
