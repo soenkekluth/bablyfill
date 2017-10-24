@@ -1,6 +1,6 @@
 {
   "name": "bablyfill",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "polyfill to run esnext code in node",
   "main": "index.js",
   "bin": {
@@ -39,5 +39,15 @@
     "babel-register": "^6.26.0",
     "object-assign": "4.1.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins":[
+      "transform-class-properties",
+      "transform-object-rest-spread"
+    ]
+  }
+
 }
