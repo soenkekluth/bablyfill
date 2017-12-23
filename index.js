@@ -1,35 +1,17 @@
-require('babel-polyfill');
-const pkgDir = require('pkg-dir');
-const fs = require('fs');
+#!/usr/bin/env node
+
 const path = require('path');
-const babelrcFile = '.babelrc';
+require('babel-polyfill');
+require('babel-register')(require('./.babelrc.js'));
+require('module-alias/register');
+process.execArgv.splice(1, 0, __filename);
+process.argv.splice(1, 1);
 
-module.exports = function bablyfill(conf, babelrcPath) {
-
-  if (!babelrcPath) {
-    var processDir = fs.realpathSync(process.cwd());
-    if (fs.existsSync(path.resolve(processDir, babelrcFile))) {
-      babelrcPath = path.resolve(processDir, babelrcFile);
-    } else if (fs.existsSync(path.resolve(__dirname, '../../.babelrc'))) {
-      babelrcPath = path.resolve(__dirname, '../../.babelrc');
-    } else {
-      babelrcPath = path.resolve(__dirname, '.babelrc');
-    }
-  }
-
-  var babelrc;
-
-  try {
-    babelrc = fs.readFileSync(babelrcPath);
-    babelrc = JSON.parse(babelrc);
-  } catch (err) {
-    console.error('==>     ERROR: Error parsing your .babelrc. from ' + babelrcPath);
-    console.error(err);
-    babelrc = null;
-  } finally {
-    if (babelrc || conf) {
-      var config = Object.assign({}, babelrc, conf);
-      require('babel-core/register')(config);
-    }
-  }
-};
+// global.isDevNode = true;
+// global.devNodeUseDist = false;
+// if (process.argv[2] === '--use-dist') {
+//   global.devNodeUseDist = true;
+//   process.execArgv.splice(2, 0, '--use-dist');
+//   process.argv.splice(2, 1);
+// }
+require(path.resolve(process.cwd(), process.argv[1]));
