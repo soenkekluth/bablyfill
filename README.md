@@ -1,7 +1,7 @@
 # bablyfill
 run your es6+ node code without any installs but bablyfill 
 
-## install
+## install locally
 
 ```shell
 npm install [--save[-dev]] bablyfill
@@ -10,66 +10,37 @@ npm install [--save[-dev]] bablyfill
 yarn add bablyfill
 ```
 
-## CLI
+## install global
+
 ```shell
-bablyfill path/to/es6.js
+npm i -g bablyfill
 ```
-
-## Module
-```javascript
-  
-require('bablyfill')();
-require('./es6-app');
-
+```shell
+yarn global add bablyfill
 ```
 
 
-## Options
-
-bablyfill looks for a .babelrc file in the root of your project and uses it for initialization.
-execute only once at the top of your projects main.js
-more options can also be defined:
-
-```javascript
-  
-var bablyfill = require('bablyfill');
-
-// just run (and use .babelrc from root)
-bablyfill();
-
-// or with options:
-bablyfill({
-  ignore : /node_modules\/(?!es6-module)/
-});
-
-// or with path to .babelrc:
-bablyfill(null, path.resolve('../.babelrc'));
-  
-  
-// require your es6 code:
-require('./es6-app');
-
+## CLI
+bablyfill installs 4 binaries that are only aliases for each other.
+you can use each following shell command to start the magic:
+```shell
+bablyfill
+devnode
+es6ify
+es6
+```
+### run es6 code
+to run es6+ code you can simply call: 
+```shell
+es6 path/to/es6-app.js
+```
+### transpile an es6 script instantly
+```shell
+es6 t path/to/es6-app.js path/lib/dest.js
 ```
 
-## Usage example: (easiest)
-- create a file [sript.js] containing:
-```javascript
-var bablyfill = require('bablyfill');
-bablyfill();
-
-// require your es6 code:
-require('./es6-app');
-  
-```
-- run
-```
-node ./sript
+### transpile / transform es6 code inside a folder recursive and instantly
+```shell
+es6 t path/to/es6 path/to/lib/
 ```
 
-
-## example:
-
-```
-  npm install && npm run example
-
-```
