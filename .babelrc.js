@@ -29,6 +29,10 @@ if (isBrowser) {
 module.exports = {
   babelrc: false,
   presets: [
+    require('babel-preset-react'),
+    require('babel-preset-flow'),
+    require('babel-preset-es2017'),
+    require('babel-preset-es2016'),
     [
       require('babel-preset-env'),
       {
@@ -38,9 +42,12 @@ module.exports = {
         include: [],
         exclude:
           minNode >= 8 && !!isBrowser
-            ? [require('babel-plugin-transform-async-to-generator'), require('babel-plugin-transform-regenerator')]
+            ? [
+                require('babel-plugin-transform-async-to-generator'),
+                require('babel-plugin-transform-regenerator'),
+              ]
             : [],
-        targets: targets
+        targets: targets,
       },
     ],
   ],

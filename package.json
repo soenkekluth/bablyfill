@@ -1,6 +1,6 @@
 {
     "name": "bablyfill",
-    "version": "1.6.0",
+    "version": "1.7.0",
     "description": "polyfill to run esnext code in node",
     "main": "index.js",
     "bin": {
@@ -44,6 +44,10 @@
         "babel-plugin-transform-regenerator": "^6.26.0",
         "babel-polyfill": "^6.26.0",
         "babel-preset-env": "^1.6.1",
+        "babel-preset-es2016": "^6.24.1",
+        "babel-preset-es2017": "^6.24.1",
+        "babel-preset-flow": "^6.23.0",
+        "babel-preset-react": "^6.24.1",
         "babel-register": "^6.26.0",
         "commander": "^2.12.2",
         "glob": "^7.1.2",
