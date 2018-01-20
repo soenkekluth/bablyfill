@@ -1,3 +1,5 @@
 node_modules
 npm-debug.log
 .history
+/lib
+/lib-es6

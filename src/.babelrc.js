@@ -1,8 +1,10 @@
-const pkg = require('./package.json');
+
+// const pkg = require('./package.json');
 // const engines = pkg.engines;
 // const semver = require("semver");
 let minNode = 8;
-const isBrowser = !!pkg.browser;
+// const isBrowser = !!pkg.browser;
+const isBrowser = false;
 
 // If supporting browsers, very unlikely to also want to target node 8
 // if (!isBrowser && engines && engines.node) {

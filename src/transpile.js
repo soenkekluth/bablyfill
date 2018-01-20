@@ -1,13 +1,30 @@
 const babel = require('babel-core');
 const fs = require('fs');
-var mm = require('micromatch');
-var glob = require('glob');
-var mkdirp = require('mkdirp');
-const options = require('./.babelrc.js');
+const mm = require('micromatch');
+const glob = require('glob');
+const mkdirp = require('mkdirp');
+// const options = require('./.babelrc.js');
+const options = require('./.babelrc.es2015.js');
 const path = require('path');
 // process.execArgv.splice(1, 0, __filename);
 // process.argv.splice(1, 1);
 
+
+const isDir = (dirpath) => {
+  try {
+    return fs.statSync(dirpath).isDirectory();
+  } catch (err) {
+    return false;
+  }
+};
+
+const isFile = (dirpath) => {
+  try {
+    return fs.statSync(dirpath).isFile();
+  } catch (err) {
+    return false;
+  }
+};
 
 const processFile = (src, dest) => {
   console.log(src, dest);
@@ -22,11 +39,8 @@ const processFile = (src, dest) => {
 
 const transpile = (src, dest) => {
   const filePath = path.resolve(process.cwd(), src);
-  // console.log(filePath);
-  // let dest = process.argv[2] ? path.basename(filePath) : file;
-  // const destDir = path.dirname(path.resolve(process.cwd(), dest));
   let destDir = path.resolve(process.cwd(), dest);
-  if(path.extname(destDir).length){
+  if (path.extname(destDir).length) {
     destDir = path.dirname(destDir);
   }
   console.log('destDir', destDir, dest);

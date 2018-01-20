@@ -1,17 +1,20 @@
 {
     "name": "bablyfill",
-    "version": "1.7.0",
+    "version": "1.9.0",
     "description": "polyfill to run esnext code in node",
-    "main": "index.js",
+    "main": "src/index.js",
     "bin": {
-        "bablyfill": "./index.js",
-        "devnode": "./index.js",
-        "es6ify": "./index.js",
-        "es6": "./index.js"
+        "bablyfill": "./src/index.js",
+        "devnode": "./src/index.js",
+        "es6ify": "./src/index.js",
+        "es6": "./src/index.js"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "example": "echo \"running this code with bablyfill\n\" && tail ./example/es6-app.js && node index.js ./example/es6-app.js"
+        "lint": "eslint ./src --fix",
+        "lib": "node src/index.js t ./example ./lib",
+        "lib-es6": "node src/index.js t ./example ./lib-es6",
+        "example": "echo \"running this code with bablyfill\n\" && tail ./example/es6-app.js && node src/index.js ./example/es6-app.js"
     },
     "repository": {
         "type": "git",
@@ -44,16 +47,23 @@
         "babel-plugin-transform-regenerator": "^6.26.0",
         "babel-polyfill": "^6.26.0",
         "babel-preset-env": "^1.6.1",
+        "babel-preset-es2015": "^6.24.1",
         "babel-preset-es2016": "^6.24.1",
         "babel-preset-es2017": "^6.24.1",
         "babel-preset-flow": "^6.23.0",
         "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "babel-preset-stage-1": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "babel-preset-stage-3": "^6.24.1",
         "babel-register": "^6.26.0",
         "commander": "^2.12.2",
         "glob": "^7.1.2",
         "micromatch": "^3.1.4",
         "mkdirp": "^0.5.1",
-        "module-alias": "^2.0.3",
-        "object-assign": "4.1.1"
+        "module-alias": "^2.0.3"
+    },
+    "devDependencies": {
+        "eslint": "^4.14.0"
     }
 }
