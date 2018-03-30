@@ -10,7 +10,8 @@
     "es6": "./src/cli.js"
   },
   "scripts": {
-    "test": "jest --coverage --verbose",
+    "test": "jest --verbose",
+    "test-": "jest --coverage --verbose",
     "test:update": "jest --verbose --coverage --updateSnapshot",
     "test:watch": "jest --verbose --watch",
     "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
@@ -31,8 +32,24 @@
   ],
   "keywords": [
     "node",
+    "transform",
+    "transpile",
+    "no-config",
+    "bundle",
+    "bundler",
+    "esnext",
+    "instant",
+    "browser",
+    "config",
+    "es7",
+    "magic",
+    "cli",
     "babel",
     "bablify",
+    "bablyfill",
+    "devnode",
+    "es6ify",
+    "compile",
     "es6",
     "esnext"
   ],
@@ -75,6 +92,10 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-sk-node": "^1.0.3",
-    "jest": "^22.4.3"
+    "jest": "^22.4.3",
+    "jest-preset-sk": "^1.0.3"
+  },
+  "jest":{
+    "preset": "jest-preset-sk"
   }
 }

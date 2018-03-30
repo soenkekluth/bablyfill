@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/soenke/n/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js link bablyfill
+  /Users/soenke/n/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js test
 
 PATH: 
   /Users/soenke/.rbenv/shims:/usr/local/opt/rbenv/bin:/usr/local/Cellar/pyenv-virtualenv/1.1.1/shims:/usr/local/opt/pyenv/shims:/usr/local/opt/pyenv/bin:/Users/soenke/.rbenv/shims:/Users/soenke/bin:/usr/local/bin:/usr/local/opt/qt/bin:/Users/soenke/.cargo/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Wireshark.app/Contents/MacOS:/usr/local/opt/rbenv/bin:/usr/local/Cellar/pyenv-virtualenv/1.1.1/shims:/usr/local/opt/pyenv/shims:/usr/local/opt/pyenv/bin:/usr/local/opt/go/libexec/bin:/usr/local/opt/sqlite/bin:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/lib:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git-extras:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pyenv:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/rbenv:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/web-search:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/z:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/node:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/npm:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/npx:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/yarn:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/react-native:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/docker:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/docker-compose:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/wp-cli:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/aws:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/nmap:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/cp:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/encode64:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/extract:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/colored-man-pages:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/cargo:/Users/soenke/.antigen/bundles/zsh-users/zsh-syntax-highlighting:/Users/soenke/.antigen/bundles/zsh-users/zsh-autosuggestions:/Users/soenke/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/zsh_reload:/Users/soenke/.antigen/bundles/zsh-users/zsh-completions:/Users/soenke/.antigen/bundles/mafredri/zsh-async:/Users/soenke/.antigen/bundles/sindresorhus/pure:/Users/soenke/n/bin
@@ -16,7 +16,7 @@ Platform:
 npm manifest: 
   {
     "name": "bablyfill",
-    "version": "1.9.0",
+    "version": "1.10.0",
     "description": "polyfill to run esnext code in node",
     "main": "src/index.js",
     "bin": {
@@ -47,8 +47,24 @@ npm manifest:
     ],
     "keywords": [
       "node",
+      "transform",
+      "transpile",
+      "no-config",
+      "bundle",
+      "bundler",
+      "esnext",
+      "instant",
+      "browser",
+      "config",
+      "es7",
+      "magic",
+      "cli",
       "babel",
       "bablify",
+      "bablyfill",
+      "devnode",
+      "es6ify",
+      "compile",
       "es6",
       "esnext"
     ],
@@ -91,7 +107,11 @@ npm manifest:
     "devDependencies": {
       "eslint": "^4.19.1",
       "eslint-config-sk-node": "^1.0.3",
-      "jest": "^22.4.3"
+      "jest": "^22.4.3",
+      "jest-preset-sk": "^1.0.3"
+    },
+    "jest":{
+      "preset": "jest-preset-sk"
     }
   }
 
@@ -6778,10 +6798,16 @@ Lockfile:
       y18n "^3.2.0"
 
 Trace: 
-  Error: No registered module found called "bablyfill".
-      at new MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
-      at Object.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:59875:17)
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:98:30)
-      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:109:13
-      at <anonymous>
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c jest --coverage --verbose
+  Directory: /Users/soenke/Developer/Workspaces/Github/bablyfill
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:180:13)
+      at maybeClose (internal/child_process.js:936:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
