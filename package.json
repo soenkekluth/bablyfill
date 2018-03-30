@@ -93,7 +93,7 @@
     "eslint": "4.19.1",
     "eslint-config-sk-node": "1.0.3",
     "jest": "22.4.3",
-    "jest-preset-sk": "1.0.3"
+    "jest-preset-sk": "1.1.0"
   },
   "jest": {
     "preset": "jest-preset-sk"
