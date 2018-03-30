@@ -1,4 +1,3 @@
-
 // const pkg = require('./package.json');
 // const engines = pkg.engines;
 // const semver = require("semver");
@@ -44,10 +43,7 @@ module.exports = {
         include: [],
         exclude:
           minNode >= 8 && !!isBrowser
-            ? [
-                require('babel-plugin-transform-async-to-generator'),
-                require('babel-plugin-transform-regenerator'),
-              ]
+            ? [require('babel-plugin-transform-async-to-generator'), require('babel-plugin-transform-regenerator')]
             : [],
         targets: targets,
       },

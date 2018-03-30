@@ -1,69 +1,80 @@
 {
-    "name": "bablyfill",
-    "version": "1.9.0",
-    "description": "polyfill to run esnext code in node",
-    "main": "src/index.js",
-    "bin": {
-        "bablyfill": "./src/index.js",
-        "devnode": "./src/index.js",
-        "es6ify": "./src/index.js",
-        "es6": "./src/index.js"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "lint": "eslint ./src --fix",
-        "lib": "node src/index.js t ./example ./lib",
-        "lib-es6": "node src/index.js t ./example ./lib-es6",
-        "example": "echo \"running this code with bablyfill\n\" && tail ./example/es6-app.js && node src/index.js ./example/es6-app.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/soenkekluth/bablyfill.git"
-    },
-    "keywords": [
-        "node",
-        "babel",
-        "bablify",
-        "es6",
-        "esnext"
-    ],
-    "author": "Sönke Kluth <soenke.kluth@gmail.com> (http://soenkekluth.com/)",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/soenkekluth/bablyfill/issues"
-    },
-    "homepage": "https://github.com/soenkekluth/bablyfill#readme",
-    "dependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-core": "^6.26.0",
-        "babel-plugin-syntax-dynamic-import": "^6.18.0",
-        "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
-        "babel-plugin-transform-async-to-generator": "^6.24.1",
-        "babel-plugin-transform-class-properties": "^6.24.1",
-        "babel-plugin-transform-exponentiation-operator": "^6.24.1",
-        "babel-plugin-transform-export-extensions": "^6.22.0",
-        "babel-plugin-transform-flow-strip-types": "^6.22.0",
-        "babel-plugin-transform-object-rest-spread": "^6.26.0",
-        "babel-plugin-transform-regenerator": "^6.26.0",
-        "babel-polyfill": "^6.26.0",
-        "babel-preset-env": "^1.6.1",
-        "babel-preset-es2015": "^6.24.1",
-        "babel-preset-es2016": "^6.24.1",
-        "babel-preset-es2017": "^6.24.1",
-        "babel-preset-flow": "^6.23.0",
-        "babel-preset-react": "^6.24.1",
-        "babel-preset-stage-0": "^6.24.1",
-        "babel-preset-stage-1": "^6.24.1",
-        "babel-preset-stage-2": "^6.24.1",
-        "babel-preset-stage-3": "^6.24.1",
-        "babel-register": "^6.26.0",
-        "commander": "^2.12.2",
-        "glob": "^7.1.2",
-        "micromatch": "^3.1.4",
-        "mkdirp": "^0.5.1",
-        "module-alias": "^2.0.3"
-    },
-    "devDependencies": {
-        "eslint": "^4.14.0"
-    }
+  "name": "bablyfill",
+  "version": "1.9.0",
+  "description": "polyfill to run esnext code in node",
+  "main": "src/index.js",
+  "bin": {
+    "bablyfill": "./src/cli.js",
+    "devnode": "./src/cli.js",
+    "es6ify": "./src/cli.js",
+    "es6": "./src/cli.js"
+  },
+  "scripts": {
+    "test": "jest --coverage --verbose",
+    "test:update": "jest --verbose --coverage --updateSnapshot",
+    "test:watch": "jest --verbose --watch",
+    "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
+    "lint": "eslint ./src --fix",
+    "update": "yarn upgrade-interactive --latest && rm yarn.lock && yarn",
+    "format": "prettier --write '**/*.{js,json,css}' '**/README.md'",
+    "example": "echo \"running this code with bablyfill\n\" && tail ./example/es6-app.js && node src/index.js ./example/es6-app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soenkekluth/bablyfill.git"
+  },
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "browserslist": [
+    "unreleased Chrome versions"
+  ],
+  "keywords": [
+    "node",
+    "babel",
+    "bablify",
+    "es6",
+    "esnext"
+  ],
+  "author": "Sönke Kluth <soenke.kluth@gmail.com> (http://soenkekluth.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soenkekluth/bablyfill/issues"
+  },
+  "homepage": "https://github.com/soenkekluth/bablyfill#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-exponentiation-operator": "^6.24.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "glob-adapter": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "module-alias": "^2.0.6",
+    "pify": "^3.0.0",
+    "sade": "^1.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-sk-node": "^1.0.3",
+    "jest": "^22.4.3"
+  }
 }

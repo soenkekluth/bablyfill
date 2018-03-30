@@ -1,45 +1,37 @@
-#!/usr/bin/env node
-
 const path = require('path');
-const program = require('commander');
+const { saveFile } = require('./utils');
 
 function run(src) {
-  require('./run');
-  require(path.resolve(process.cwd(), src));
-}
-
-function transform(src, dest) {
-  const { processFile, transpile } = require('./transpile');
-  transpile(src, dest);
-}
-
-program
-  .command('run [src]')
-  .description('run es6 script')
-  .action(function(src, options) {
-    run(src);
-  });
-
-program
-  .command('transform [src] [dest]')
-  .alias('t')
-  .description('transform es6 code')
-  .action(function(src, dest, options) {
-    transform(src, dest);
-  });
-
-program.parse(process.argv);
-
-if (program.args.length === 0) {
-  try {
-    run('index.js');
-  } catch (e) {
-    console.error(e);
+  if (src) {
+    require('./bablyfill');
+    return require(path.resolve(process.cwd(), src));
   }
-} else if (program.args.length === 1) {
-  try {
-    run(program.args[0]);
-  } catch (e) {
-    console.error(e);
-  }
+  return null;
 }
+
+function transform(src) {
+  return require('./transform')(src);
+}
+
+async function save(file, dest = './') {
+  const fullPath = path.resolve(process.cwd(), file.src);
+  let out = path.resolve(fullPath, path.relative(fullPath, dest));
+  if (path.extname(file.src) && !path.extname(dest)) {
+    out = path.resolve(out, file.name);
+  }
+  const res = await saveFile(out, file.code);
+
+  process.stdout.write('wrote ' + out);
+  return res;
+}
+
+async function print(file) {
+  process.stdout.write(file.code);
+}
+
+module.exports = {
+  run,
+  transform,
+  save,
+  print,
+};

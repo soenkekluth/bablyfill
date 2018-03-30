@@ -1,5 +1,4 @@
 class ES6Module {
-
   static NAME = 'ES6Module';
 
   constructor() {

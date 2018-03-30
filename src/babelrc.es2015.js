@@ -1,4 +1,3 @@
-
 // const pkg = require('./package.json');
 module.exports = {
   babelrc: false,
@@ -11,11 +10,11 @@ module.exports = {
     require('babel-preset-stage-3'),
     require('babel-preset-es2015'),
     require('babel-preset-es2016'),
-    [require('babel-preset-es2017'),]
+    [require('babel-preset-es2017')],
   ],
   plugins: [
-    require('babel-plugin-transform-regenerator'),
     require('babel-plugin-transform-flow-strip-types'),
+    require('babel-plugin-transform-regenerator'),
     require('babel-plugin-transform-export-extensions'),
     require('babel-plugin-syntax-dynamic-import'),
     require('babel-plugin-transform-class-properties'),
