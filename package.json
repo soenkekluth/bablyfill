@@ -1,6 +1,6 @@
 {
   "name": "bablyfill",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "description": "polyfill to run esnext code in node",
   "main": "src/index.js",
   "bin": {
@@ -95,7 +95,7 @@
     "jest": "^22.4.3",
     "jest-preset-sk": "^1.0.3"
   },
-  "jest":{
+  "jest": {
     "preset": "jest-preset-sk"
   }
 }
