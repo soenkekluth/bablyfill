@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/soenkekluth/bablyfill.svg?branch=master)](https://travis-ci.org/soenkekluth/bablyfill)
+
 # bablyfill
 
 run your es6+ node code without any installs but bablyfill
