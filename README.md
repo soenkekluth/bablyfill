@@ -1,46 +1,66 @@
 # bablyfill
-run your es6+ node code without any installs but bablyfill 
 
-## install locally
+run your es6+ node code without any installs but bablyfill
 
-```shell
+## Install
+
+#### local
+
+```bash
 npm install [--save[-dev]] bablyfill
 ```
-```shell
+
+```bash
 yarn add bablyfill
 ```
 
-## install global
+#### global
 
-```shell
+```bash
 npm i -g bablyfill
 ```
-```shell
+
+```bash
 yarn global add bablyfill
 ```
 
+## Usage
 
-## CLI
+### CLI
+
 bablyfill installs 4 binaries that are only aliases for each other.
 you can use each following shell command to start the magic:
-```shell
+
+```bash
 bablyfill
 devnode
 es6ify
 es6
 ```
+
 ### run es6 code
-to run es6+ code you can simply call: 
-```shell
+
+to run es6+ code you can simply call:
+
+```bash
 es6 path/to/es6-app.js
 ```
-### transpile an es6 script instantly
-```shell
-es6 t path/to/es6-app.js path/lib/dest.js
+
+#### transpile to stdout
+
+```bash
+es6 path/to/es6-app.js -t
 ```
 
-### transpile / transform es6 code inside a folder recursive and instantly
-```shell
-es6 t path/to/es6 path/to/lib/
+#### transpile and save es6 file
+
+```bash
+es6 path/to/es6-app.js path/lib/dest.js
 ```
 
+#### transpile / transform multiple es6 sources using glob or path
+
+```bash
+es6 'path/to/es6/**/*.js' path/to/lib/
+es6 path/to/es6 path/to/lib/
+```

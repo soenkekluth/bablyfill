@@ -1,5 +1,4 @@
-// const pkg = require('./package.json');
-module.exports = {
+const config = {
   babelrc: false,
   presets: [
     require('babel-preset-react'),
@@ -21,3 +20,5 @@ module.exports = {
     require('babel-plugin-transform-object-rest-spread'),
   ],
 };
+
+module.exports = config;

@@ -26,3 +26,4 @@ chrome-user-data
 yarn-error.log
 yalc.lock
 .yalc
+example/lib

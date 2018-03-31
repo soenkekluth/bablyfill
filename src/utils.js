@@ -1,32 +1,27 @@
-const fs = require('fs');
-const path = require('path');
 const pify = require('pify');
-const isGlob = require('is-glob');
-const mkdirp = require('mkdirp');
+const { readFile, writeFile, stat } = pify(require('fs'));
+const { dirname } = require('path');
+// const isGlob = require('is-glob');
+const mkdirp = pify(require('mkdirp'));
 
-const readFile = async src => pify(fs.readFile)(src, 'utf8');
+// const readFile = pify(readFile);
+// const writeFile = pify(writeFile);
 
 const saveFile = async (dest, data) => {
-  const destDir = path.dirname(dest);
-  return pify(mkdirp)(destDir).then(d => {
-    return pify(fs.writeFile)(dest, data);
-  });
+  const destDir = dirname(dest);
+  await mkdirp(destDir);
+  const res = await writeFile(dest, data);
+  return res;
 };
 
-const isDir = dirpath => {
-  try {
-    return fs.statSync(dirpath).isDirectory();
-  } catch (err) {
-    return false;
-  }
+const isDir = async path => {
+  const stats = await stat(path);
+  return stats && stats.isDirectory();
 };
 
-const isFile = dirpath => {
-  try {
-    return fs.statSync(dirpath).isFile();
-  } catch (err) {
-    return false;
-  }
+const isFile = async path => {
+  const stats = await stat(path);
+  return stats && stats.isFile();
 };
 
 module.exports = {
@@ -34,5 +29,5 @@ module.exports = {
   readFile,
   isDir,
   isFile,
-  isGlob,
+  // isGlob,
 };
