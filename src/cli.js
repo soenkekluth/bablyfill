@@ -5,10 +5,13 @@ const { version } = require('../package.json');
 
 const name = path.basename(process.argv[1]);
 const program = sade(name);
-
+const presets = ['env', 'es2015', 'all'];
 const { run, transform, save, print } = require('./index');
 
-program.version(version).option('--config, -c', 'config');
+program
+  .version(version)
+  .option('--config, -c', 'babel config file (babelrc)')
+  .option('--preset, -p', 'bablyfill preset [' + presets.join(' ') + ']', 'all');
 
 program
   .command('run <src> [dest]', 'run or transpile esnext code', { default: true })
@@ -23,8 +26,12 @@ program
   // .example('es6ify ./path/esnext.js')
   .action(async (src, dest, options) => {
     const processor = dest ? save : print;
+
     if (dest || (options && options.t)) {
-      const results = await transform(src);
+      const babelOpts =
+        options.config || presets.indexOf(options.preset) > -1 ? './babelrc.' + options.preset : options.preset;
+      const conf = require(babelOpts);
+      const results = await transform(src, conf);
       results.forEach(res => processor(res, dest));
 
       // results.forEach(res => process.stdout.write(res.code));

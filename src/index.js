@@ -9,8 +9,8 @@ function run(src) {
   return null;
 }
 
-function transform(src) {
-  return require('./transform')(src);
+function transform(src, config) {
+  return require('./transform')(src, config);
 }
 
 async function save(file, dest = './') {

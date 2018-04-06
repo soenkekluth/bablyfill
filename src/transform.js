@@ -1,10 +1,11 @@
 const babel = require('babel-core');
 const path = require('path');
 const glob = require('glob-adapter').adapter();
-const options = require('./babelrc.es2015.js');
+// const options = require('./babelrc.es2015.js');
+// const options = require('./babelrc.env.js');
 const { readFile } = require('./utils');
 
-const transformCode = code => {
+const transformCode = (code, options = {}) => {
   try {
     const res = babel.transform(code, options);
 
@@ -16,9 +17,9 @@ const transformCode = code => {
   }
 };
 
-const transformFile = async src => {
+const transformFile = async (src, options) => {
   const res = await readFile(src);
-  return transformCode(res);
+  return transformCode(res, options);
 };
 
 class SourceFile {
@@ -28,19 +29,19 @@ class SourceFile {
     this.code = null;
   }
 
-  async transform() {
-    this.code = await transformFile(this.src);
+  async transform(options) {
+    this.code = await transformFile(this.src, options);
     return this.code;
   }
 }
 
-const transform = async pattern => {
+const transform = async (pattern, options) => {
   const result = [];
   const files = await glob.read(pattern);
 
   for (let i = 0, l = files.length; i < l; i++) {
     const sourceFile = new SourceFile(files[i]);
-    await sourceFile.transform();
+    await sourceFile.transform(options);
     result.push(sourceFile);
   }
 
