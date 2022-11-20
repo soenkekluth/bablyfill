@@ -88,7 +88,7 @@
         "glob-adapter": "^1.2.0",
         "mkdirp": "^0.5.1",
         "module-alias": "^2.0.6",
-        "pify": "^3.0.0",
+        "pify": "^6.0.0",
         "sade": "^1.4.0"
     },
     "devDependencies": {
