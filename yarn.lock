@@ -85,6 +85,11 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@snyk/protect@^1.1167.0":
+  version "1.1167.0"
+  resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.1167.0.tgz#825bd97dba6a684f17345e727988a737668e9f73"
+  integrity sha512-KO0bzR1LDz5brLu549I+3FjVAqmR5UXpmjAjImaHm4yfG3cZ6gapxi+1hErHhZcCvzw7pwvpfGEOpiFIg2UYbQ==
+
 abab@^1.0.3, abab@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
